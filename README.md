@@ -120,3 +120,223 @@ FAISS Vector Database         Relationship Learning
 |                  Final Answer                    |
 |       Recommendation with Explanation            |
 +--------------------------------------------------+
+
+
+
+
+
+---
+
+# Project Structure
+
+```text
+construct-gnn-ai/
+│
+├── data/
+│   └── construction_products.csv
+│
+├── src/
+│   ├── __init__.py
+│   ├── graph.py
+│   ├── gnn_model.py
+│   ├── train.py
+│   ├── predict.py
+│   ├── nlp.py
+│   ├── rag.py
+│   ├── agent.py
+│   └── utils.py
+│
+├── app.py
+├── main.py
+├── requirements.txt
+├── README.md
+└── models/
+    └── saved_model.pt
+```
+
+---
+
+# Overview
+
+Construct-GNN-AI is an intelligent AI platform for the construction industry that combines:
+
+- Graph Neural Networks (GNN)
+- Natural Language Processing (NLP)
+- Retrieval-Augmented Generation (RAG)
+- AI Agents
+
+The system analyses relationships between construction materials, suppliers, technical specifications, and product compatibility to generate intelligent recommendations and insights.
+
+---
+
+# Features
+
+- Supplier recommendation system
+- Material compatibility analysis
+- Product relationship graph analysis
+- Semantic search using embeddings
+- AI-powered technical question answering
+- RAG-based document retrieval
+- Multi-agent reasoning workflow
+- Streamlit interactive dashboard
+
+---
+
+# Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| Python | Main programming language |
+| PyTorch | Deep learning framework |
+| PyTorch Geometric | Graph Neural Networks |
+| NetworkX | Graph construction |
+| LangChain | RAG pipeline |
+| FAISS | Vector database |
+| Sentence Transformers | Embeddings |
+| Transformers | NLP models |
+| Streamlit | Web application |
+| Pandas | Data processing |
+
+---
+
+# Installation
+
+## 1. Clone Repository
+
+```bash
+git clone https://github.com/your-username/construct-gnn-ai.git
+cd construct-gnn-ai
+```
+
+---
+
+## 2. Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+### Activate Environment
+
+#### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+#### Linux / Mac
+
+```bash
+source venv/bin/activate
+```
+
+---
+
+## 3. Install Required Libraries
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# requirements.txt
+
+```text
+torch
+torch-geometric
+pandas
+numpy
+scikit-learn
+networkx
+matplotlib
+streamlit
+sentence-transformers
+transformers
+langchain
+faiss-cpu
+```
+
+---
+
+# System Workflow
+
+```text
+Construction Product Data
+            ↓
+NLP Text Processing
+            ↓
+Embedding Generation
+            ↓
+Graph Creation using NetworkX
+            ↓
+GNN Model Training
+            ↓
+Relationship Learning
+            ↓
+Supplier & Material Recommendation
+            ↓
+RAG Retrieval System
+            ↓
+AI Agent Reasoning
+            ↓
+Streamlit Dashboard Output
+```
+
+---
+
+# Example Use Cases
+
+## Supplier Recommendation
+
+Find the best supplier based on:
+
+- Product similarity
+- Pricing
+- Material quality
+- Delivery performance
+
+---
+
+## Material Compatibility
+
+Analyse whether two construction materials can work together safely and efficiently.
+
+---
+
+## Product Relationship Analysis
+
+Use GNN to discover hidden relationships between:
+
+- Materials
+- Suppliers
+- Product categories
+- Technical specifications
+
+---
+
+# Run the Project
+
+```bash
+streamlit run app.py
+```
+
+---
+
+# Future Improvements
+
+- Multi-agent collaboration
+- Cloud deployment using Docker & Kubernetes
+- Real-time construction data ingestion
+- Knowledge graph expansion
+- LLM-based report generation
+
+---
+
+# Author
+
+Sajjad Hussain
+Researcher in AI  
+University of Brighton  
+United Kingdom
+
