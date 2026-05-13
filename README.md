@@ -198,29 +198,7 @@ construct-gnn-ai/
 
 ---
 
-# Overview
 
-Construct-GNN-AI is an intelligent AI platform for the construction industry that combines:
-
-- Graph Neural Networks (GNN)
-- Natural Language Processing (NLP)
-- Retrieval-Augmented Generation (RAG)
-- AI Agents
-
-The system analyses relationships between construction materials, suppliers, technical specifications, and product compatibility to generate intelligent recommendations and insights.
-
----
-
-# Features
-
-- Supplier recommendation system
-- Material compatibility analysis
-- Product relationship graph analysis
-- Semantic search using embeddings
-- AI-powered technical question answering
-- RAG-based document retrieval
-- Multi-agent reasoning workflow
-- Streamlit interactive dashboard
 
 ---
 
