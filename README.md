@@ -31,97 +31,139 @@ The system combines:
 
 ---
 
-## System Flowchart
+# System Flowchart
 
 ```text
-User Query
-    |
-    v
-Streamlit Web Interface
-    |
-    v
-NLP Processing
-    |
-    v
-Intent Detection
-    |
-    +-----------------------------+
-    |                             |
-    v                             v
-RAG Pipeline                  Knowledge Graph
-PDF / CSV Data                Product-Supplier-Material Graph
-    |                             |
-    v                             v
-Text Chunking                 Graph Construction
-    |                             |
-    v                             v
-Embedding Model               GNN Model
-    |                             |
-    v                             v
-FAISS Vector Database         Relationship Learning
-    |                             |
-    +-------------+---------------+
-                  |
-                  v
-          Recommendation Engine
-                  |
-                  v
-              LLM / Ollama
-                  |
-                  v
-          Final AI Response
+                           +----------------------+
+                           |      User Query      |
+                           +----------------------+
+                                      |
+                                      v
+                           +----------------------+
+                           | Streamlit Web App UI |
+                           +----------------------+
+                                      |
+                                      v
+                           +----------------------+
+                           |    NLP Processing    |
+                           | Tokenization / Clean |
+                           +----------------------+
+                                      |
+                                      v
+                           +----------------------+
+                           |   Intent Detection   |
+                           +----------------------+
+                                      |
+                    +-----------------+-----------------+
+                    |                                   |
+                    v                                   v
+
+        +----------------------+         +---------------------------+
+        |     RAG Pipeline     |         |      Knowledge Graph      |
+        +----------------------+         +---------------------------+
+        | PDF / CSV Documents  |         | Product-Supplier-Material |
+        +----------------------+         +---------------------------+
+                    |                                   |
+                    v                                   v
+
+        +----------------------+         +---------------------------+
+        |    Text Chunking     |         |     Graph Construction    |
+        +----------------------+         +---------------------------+
+                    |                                   |
+                    v                                   v
+
+        +----------------------+         +---------------------------+
+        |   Embedding Model    |         |         GNN Model         |
+        | SentenceTransformer  |         |    PyTorch Geometric      |
+        +----------------------+         +---------------------------+
+                    |                                   |
+                    v                                   v
+
+        +----------------------+         +---------------------------+
+        |  FAISS Vector Store  |         |  Relationship Learning    |
+        +----------------------+         +---------------------------+
+                    |                                   |
+                    +-----------------+-----------------+
+                                      |
+                                      v
+                           +----------------------+
+                           | Recommendation Engine|
+                           +----------------------+
+                                      |
+                                      v
+                           +----------------------+
+                           |     LLM / Ollama     |
+                           +----------------------+
+                                      |
+                                      v
+                           +----------------------+
+                           |   Final AI Response  |
+                           +----------------------+
+```
 
 
-          +--------------------------------------------------+
-|                  User Interface                  |
-|                 Streamlit Web App                |
-+--------------------------+-----------------------+
-                           |
-                           v
-+--------------------------------------------------+
-|                  NLP Layer                       |
-|  Text Cleaning | Tokenization | Intent Detection |
-+--------------------------+-----------------------+
-                           |
-                           v
-+--------------------------------------------------+
-|                Data Processing Layer             |
-|       CSV Data | PDF Catalogues | Supplier Data   |
-+--------------------------+-----------------------+
-                           |
-                           v
-+--------------------------+-----------------------+
-|                                                  |
-|              AI Intelligence Layer               |
-|                                                  |
-|  +----------------------+    +----------------+  |
-|  | RAG Pipeline         |    | GNN Pipeline   |  |
-|  | Chunking             |    | Knowledge Graph|  |
-|  | Embeddings           |    | Node Features  |  |
-|  | FAISS Search         |    | Edge Relations |  |
-|  +----------------------+    +----------------+  |
-|                                                  |
-+--------------------------+-----------------------+
-                           |
-                           v
-+--------------------------------------------------+
-|              Recommendation Engine               |
-| Supplier Ranking | Compatibility | Product Match |
-+--------------------------+-----------------------+
-                           |
-                           v
-+--------------------------------------------------+
-|                 LLM Response Layer               |
-|              Ollama / Llama / Mistral            |
-+--------------------------+-----------------------+
-                           |
-                           v
-+--------------------------------------------------+
-|                  Final Answer                    |
-|       Recommendation with Explanation            |
-+--------------------------------------------------+
 
+# System Architecture
 
+```text
+                    +----------------------------------+
+                    |   Construction Product Data      |
+                    |  CSV / PDF / Web Documents      |
+                    +----------------------------------+
+                                      |
+                                      v
+                    +----------------------------------+
+                    |      NLP Preprocessing Layer     |
+                    | Tokenization / Cleaning / NLP    |
+                    +----------------------------------+
+                                      |
+                                      v
+                    +----------------------------------+
+                    |      Embedding Generation        |
+                    | Sentence Transformers / BERT     |
+                    +----------------------------------+
+                                      |
+                                      v
+                    +----------------------------------+
+                    |        Vector Database           |
+                    |            FAISS                 |
+                    +----------------------------------+
+                                      |
+                                      v
+                    +----------------------------------+
+                    |      Graph Construction Layer    |
+                    |    NetworkX Product Graph        |
+                    +----------------------------------+
+                                      |
+                                      v
+                    +----------------------------------+
+                    |       Graph Neural Network       |
+                    |     PyTorch Geometric (GNN)      |
+                    +----------------------------------+
+                                      |
+                    +----------------------------------+
+                    | Relationship Learning & Analysis |
+                    | Supplier / Material Prediction   |
+                    +----------------------------------+
+                                      |
+                                      v
+                    +----------------------------------+
+                    |         RAG Retrieval Layer      |
+                    | LangChain + Retriever            |
+                    +----------------------------------+
+                                      |
+                                      v
+                    +----------------------------------+
+                    |         AI Agent System          |
+                    | Planning / Reasoning / Tools     |
+                    +----------------------------------+
+                                      |
+                                      v
+                    +----------------------------------+
+                    |       Streamlit Web App          |
+                    | Recommendation & Visualization   |
+                    +----------------------------------+
+```
 
 
 
