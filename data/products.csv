@@ -1,0 +1,6 @@
+product_id,product_name,material,properties,compatible_with,supplier,price
+P001,FireSafe Insulation Board,insulation,fire-resistant thermal,timber wall;steel frame,BuildMax,25
+P002,ThermoWall Panel,wall panel,thermal waterproof,timber wall,ConstructPlus,18
+P003,SteelFix Adhesive,adhesive,strong waterproof,steel frame;concrete wall,FixPro,12
+P004,EcoTimber Board,timber,sustainable lightweight,insulation;wall panel,GreenBuild,22
+P005,Concrete Shield Coating,coating,waterproof durable,concrete wall,BuildMax,15
